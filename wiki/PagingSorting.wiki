@@ -62,8 +62,8 @@ add a property for the helper to be injected into `authorityController` in despa
 ===Add new manager, dao and helper beans to app context===
 In your applicationContext.xml add in bean definitions for the `pagingLookupDao`,` pagingLookupManager` and `paginatedListFactory`.  example source is here: [http://code.google.com/p/pagingappfuse/source/browse/trunk/paging/src/main/webapp/WEB-INF/applicationContext.xml application-context.xml]
 
-===Change AuthorityControllerTest test===
-The last line of the unit test does an cast for a List - change this to assert an instance of PaginatedList then getList before the size assertion. see [http://code.google.com/p/pagingappfuse/source/browse/trunk/paging/src/test/java/com/pobox/paging/webapp/controller/AuthorityControllerTest.java AuthorityControllerTest.java]
+===Change `AuthorityControllerTest` test===
+The last line of the unit test does an cast for a List - change this to assert an instance of `PaginatedLis`t then getList before the size assertion. see [http://code.google.com/p/pagingappfuse/source/browse/trunk/paging/src/test/java/com/pobox/paging/webapp/controller/AuthorityControllerTest.java AuthorityControllerTest.java]
 
 ===Run it and try new paging===
 execute `mvn jetty:run-war -Ph2`
