@@ -37,14 +37,14 @@ browse to http://localhost:8080 login and navigate via the menu to Authority Lis
 With the project as is you should be able to see the problem: Display Tag allows paging and sorting, if you click on a column header to sort ascending or descending.  Note that it only sorts the records that are on the page - all the other records are excluded from this 'internal' Display Tag sort.  Similarly when the page was generated every single record was retrieved, but only 25 were shown.  With big datasets this is going to slow your web app down, (a lot), and the inconsistent sorting will confuse your users.  This is what we are going to fix.
 
 ==Proposed Solution==
-Display Tag allows you to implement a PaginatedList interface, if it gets passed one of these on your page to use as a model it assumes you are doing all paging and sorting externally and modifies the request URL's it send back from a page to your controller to something slightly less cryptic than the usual.  Our controller can take advantage of this to only find the number of records required to display this page full of info, and the total number of records that the query would return if we didn't limit it.  Similarly we can amend our query to get the RDBMS (via Hibernate) to sort on the users request column and then return the X number records required - fixing the sorting as well.  To make this work we will need to keep track of what page we are on, number of records per page, the total number of records etc.  and modify queries accordingly; which is easiest by adding some helper objects and a new PagingDAO similar to the existing LookupDAO in Appfuse.
+Display Tag allows you to implement a `PaginatedList` interface, if it gets passed one of these on your page to use as a model it assumes you are doing all paging and sorting externally and modifies the request URL's it send back from a page to your controller to something slightly less cryptic than the usual.  Our controller can take advantage of this to only find the number of records required to display this page full of info, and the total number of records that the query would return if we didn't limit it.  Similarly we can amend our query to get the RDBMS (via Hibernate) to sort on the users request column and then return the X number records required - fixing the sorting as well.  To make this work we will need to keep track of what page we are on, number of records per page, the total number of records etc.  and modify queries accordingly; which is easiest by adding some helper objects and a new PagingDAO similar to the existing LookupDAO in Appfuse.
 
 ==THE STEPS==
 ===extend PaginatedList===
-In the blog entry by Ram Gorti he has a nice implementation of an extended PaginatedList, (original is here http://javanotes.wikispaces.com/PaginatedListImpl ) keeping track of everything we need and doing the sums about pagesizes and numbers. So I reused this wholesale - the code for this is in /paging/src/main/java/com/pobox/paging/webapp/helper/PaginatedListImpl.java   **INSERT**
+In the blog entry by Ram Gorti he has a nice implementation of an extended PaginatedList, (original is here http://javanotes.wikispaces.com/PaginatedListImpl ) keeping track of everything we need and doing the sums about pagesizes and numbers. So I reused this wholesale - the code for this is in `/paging/src/main/java/com/pobox/paging/webapp/helper/PaginatedListImpl.java` 
 
-===Convenience factory method for PaginatedList from HttpRequest===
-Add a convenience creation method that unwraps the HttpRequest getting all the Display Tag info out of it returning a new populated object that extends PaginatedList, already correctly setup - all that's needed is the subset (page) ofList records and the total to be set.  I put this into a helper object at /paging/src/main/java/com/pobox/paging/webapp/helper/PaginateListFactory.java 
+===Convenience factory method for `PaginatedList` from `HttpRequest`===
+Add a convenience creation method that unwraps the HttpRequest getting all the Display Tag info out of it returning a new populated object that extends `PaginatedList`, already correctly setup - all that's needed is the subset (page) of List records and the total to be set.  I put this into a helper object at `/paging/src/main/java/com/pobox/paging/webapp/helper/PaginateListFactory.java` 
 This has a null check for HttpRequest so out appfuse unit tests work outside of a web container, it has sensible defaults if it can't unwrap the http request.
 
 ===Add a Manager in the service layer===
@@ -68,8 +68,6 @@ The last line of the unit test does an cast for a List - change this to assert a
 ===Run it and try new paging===
 execute `mvn jetty:run-war -Ph2`
 then  login and browse to the Authority List page - try the new paging and see that sorting of columns now works.  This places much less load on the database as it only retrieves required records.  Note also the URL of the requests from Display tag for paging and sorting are now less cryptic - it has recognized that a PaginatedList was supplied and is handing off all calls for sorting and paging correctly.
-
-
 
 
 
