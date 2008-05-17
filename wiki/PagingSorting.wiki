@@ -41,7 +41,7 @@ Display Tag allows you to implement a `PaginatedList` interface, if it gets pass
 
 ==THE STEPS==
 ===extend Paginated List===
-In the blog entry by Ram Gorti he has a nice implementation of an extended PaginatedList, (original is here http://javanotes.wikispaces.com/PaginatedListImpl ) keeping track of everything we need and doing the sums about pagesizes and numbers. So I reused this wholesale - the code for this is in [[http://code.google.com/p/pagingappfuse/source/browse/trunk/paging/src/main/java/com/pobox/paging/webapp/helper/PaginatedListImpl.java PaginatedList.java] 
+In the blog entry by Ram Gorti he has a nice implementation of an extended PaginatedList, (original is here http://javanotes.wikispaces.com/PaginatedListImpl ) keeping track of everything we need and doing the sums about pagesizes and numbers. So I reused this wholesale - the code for this is in [http://code.google.com/p/pagingappfuse/source/browse/trunk/paging/src/main/java/com/pobox/paging/webapp/helper/PaginatedListImpl.java PaginatedList.java] 
 
 ===Convenience factory method for `PaginatedList` from `HttpRequest`===
 Add a convenience creation method that unwraps the HttpRequest getting all the Display Tag info out of it returning a new populated object that extends `PaginatedList`, already correctly setup - all that's needed is the subset (page) of List records and the total to be set.  I put this into a helper object at [http://code.google.com/p/pagingappfuse/source/browse/trunk/paging/src/main/java/com/pobox/paging/webapp/helper/PaginateListFactory.java PaginateListFactory.java] 
