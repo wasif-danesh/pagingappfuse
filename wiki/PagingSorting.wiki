@@ -1,4 +1,4 @@
-All the code is in http://code.google.com/p/pagingappfuse
+All the code is in http://code.google.com/p/pagingappfuse  go to http://code.google.com/p/pagingappfuse/source/checkout for instructions on checking out the whole project, or you can browse the source from http://code.google.com/p/pagingappfuse/source/browse
 
 ==Overview==
 I saw the blog post by Ram Gorti at http://i-work-i-blog.blogspot.com/2007/06/display-tag-and-external-pagination.html and have re-used code and adapted the implementation to fit into a web project built on appfuse. Thanks Ram!
