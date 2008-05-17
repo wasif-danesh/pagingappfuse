@@ -7,6 +7,7 @@ I saw the blog post by Ram Gorti at http://i-work-i-blog.blogspot.com/2007/06/di
 The following will get a new project into a state needed to build the paging and sorting:
 Start with a SpringMVC basic project and generate in the same was as the appfuse quickstart guide shows here: http://appfuse.org/display/APF/AppFuse+QuickStart 
 e.g.
+
 `mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -DarchetypeArtifactId=appfuse-basic-spring -DremoteRepositories=http://static.appfuse.org/releases -DarchetypeVersion=2.0.2 -DgroupId=com.pobox.paging -DartifactId=pagingappfuse`
 
 Run the app to download dependencies and so on - I'm using h2 as an RDBMS here:
@@ -67,4 +68,3 @@ The last line of the unit test does an cast for a List - change this to assert a
 ===Run it and try new paging===
 execute `mvn jetty:run-war -Ph2`
 then  login and browse to the Authority List page - try the new paging and see that sorting of columns now works.  This places much less load on the database as it only retrieves required records.  Note also the URL of the requests from Display tag for paging and sorting are now less cryptic - it has recognized that a PaginatedList was supplied and is handing off all calls for sorting and paging correctly.
-
