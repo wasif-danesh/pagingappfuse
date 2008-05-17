@@ -11,14 +11,14 @@ e.g.
 `mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -DarchetypeArtifactId=appfuse-basic-spring -DremoteRepositories=http://static.appfuse.org/releases -DarchetypeVersion=2.0.2 -DgroupId=com.pobox.paging -DartifactId=pagingappfuse`
 
 Run the app to download dependencies and so on - I'm using h2 as an RDBMS here:
-mvn -Ph2
+`mvn -Ph2`
 then generate eclipse project files:
-mvn eclipse:eclipse
+`mvn eclipse:eclipse`
 
-Now add an entity to persist then try to page and sort with. create a Hibernate annotated POJO called Authority in the model package like this: ***INSERT**
+Now add an entity to persist then try to page and sort with. create a Hibernate annotated POJO called Authority in the model package like this: [http://code.google.com/p/pagingappfuse/source/browse/trunk/src/main/java/com/pobox/paging/model/Authority.java Authority.java]
 
-Generate the CRUD logic and screens - mvn appfuse:gen -Dentity=Authority
-Because the pluralisation generated is slightly wrong in this example fix the bean definition for urlMapping in
+Generate the CRUD logic and screens - `mvn appfuse:gen -Dentity=Authority`
+Because the pluralisation as generated is slightly wrong in this example, fix the bean definition for urlMapping in
 {{{ /paging/src/main/webapp/WEB-INF/dispatcher-servlet.xml}}}
 by adding
 {{{/authorities.html=authorityController}}}
