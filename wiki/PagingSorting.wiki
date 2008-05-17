@@ -40,7 +40,7 @@ With the project as is you should be able to see the problem: Display Tag allows
 Display Tag allows you to implement a `PaginatedList` interface, if it gets passed one of these on your page to use as a model it assumes you are doing all paging and sorting externally and modifies the request URL's it send back from a page to your controller to something slightly less cryptic than the usual.  Our controller can take advantage of this to only find the number of records required to display this page full of info, and the total number of records that the query would return if we didn't limit it.  Similarly we can amend our query to get the RDBMS (via Hibernate) to sort on the users request column and then return the X number records required - fixing the sorting as well.  To make this work we will need to keep track of what page we are on, number of records per page, the total number of records etc.  and modify queries accordingly; which is easiest by adding some helper objects and a new PagingDAO similar to the existing `LookupDAO` in Appfuse.
 
 ==THE STEPS==
-===extend PaginatedList===
+===extend Paginated List===
 In the blog entry by Ram Gorti he has a nice implementation of an extended PaginatedList, (original is here http://javanotes.wikispaces.com/PaginatedListImpl ) keeping track of everything we need and doing the sums about pagesizes and numbers. So I reused this wholesale - the code for this is in [[http://code.google.com/p/pagingappfuse/source/browse/trunk/paging/src/main/java/com/pobox/paging/webapp/helper/PaginatedListImpl.java PaginatedList.java] 
 
 ===Convenience factory method for `PaginatedList` from `HttpRequest`===
