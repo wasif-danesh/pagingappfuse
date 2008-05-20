@@ -13,9 +13,15 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.appfuse.model.BaseObject;
+import org.compass.annotations.Searchable;
+import org.compass.annotations.SearchableId;
+import org.compass.annotations.SearchableMetaData;
+import org.compass.annotations.*;
 
 @SuppressWarnings("unchecked")
 @Entity
+@Searchable(alias="authority") 
+@SearchableConstant(name = "type", values = {"authority"})
 public class Authority extends BaseObject implements Comparable<Authority> {
     private static final long serialVersionUID = -5633829061950556162L;
     private Long id;
@@ -26,11 +32,15 @@ public class Authority extends BaseObject implements Comparable<Authority> {
         return authorityName;
     }
 
+    @SearchableProperty(name="name") 
+    @SearchableMetaData(name = "authorityName")
     public void setAuthorityName(String authorityName) {
         this.authorityName = authorityName;
     }
 
     @Version
+    @SearchableProperty(name = "version") 
+    @SearchableMetaData(name = "version", format = "dd-MM-yyyy")
     public Date getVersion() {
         return version;
     }
@@ -41,6 +51,7 @@ public class Authority extends BaseObject implements Comparable<Authority> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @SearchableId 
     public Long getId() {
         return id;
     }

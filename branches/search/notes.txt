@@ -1,0 +1,24 @@
+instructions at http://www.nabble.com/Mini-Tutorial%3A-Compass-and-AppFuse-2.0-tt12608860s2369.html#a12608860
+
+sync issue need a repo
+http://forum.compass-project.org/thread.jspa?messageID=294522&tstart=0 
+        <repository>
+            <id>compass</id>
+            <url>http://repo.compass-project.org</url>
+        </repository>
+add dependency
+                <dependency>
+            <groupId>org.compass-project</groupId>
+            <artifactId>compass</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        
+properties:
+        <!-- Compass Settings -->
+        <compass.version>2.0.0</compass.version>
+        
+        annotate model instructions at http://www.compass-project.org/docs/2.0.0/reference/html/core-osem.html
+        
+        
+        HOWTO
+        http://forum.compass-project.org/thread.jspa?threadID=72388&tstart=-1

@@ -13,10 +13,12 @@
             <Item name="FileUpload" title="menu.selectFile" page="/fileupload.html"/>
             <Item name="FlushCache" title="menu.flushCache" page="/admin/flushCache.html"/>
             <Item name="Clickstream" title="menu.clickstream" page="/admin/clickstreams.jsp"/>
+            <Item name="ReIndex" title="menu.reindex" page="/reindex.html"  /> 
         </Menu>
         <Menu name="Logout" title="user.logout" page="/logout.jsp" roles="ROLE_ADMIN,ROLE_USER"/>
         <!--Authority-START-->
         <Menu name="AuthorityMenu" title="authorityList.title" page="/authorities.html"/>
         <!--Authority-END-->
+        <Menu name="SearchMenu" title="menu.search" page="/search.html"  /> 
     </Menus>
 </MenuConfig>
