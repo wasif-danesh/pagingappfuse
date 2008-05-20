@@ -11,5 +11,6 @@
     <!--Authority-START-->
     <menu:displayMenu name="AuthorityMenu"/>
     <!--Authority-END-->
+    <menu:displayMenu name="SearchMenu"/> 
 </ul>
 </menu:useMenuDisplayer>
