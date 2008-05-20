@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+       default-lazy-init="true">
+
+    <!-- Add new DAOs here -->
+    <bean id="pagingLookupDao"
+        class="com.pobox.paging.dataaccess.PagingLookupDaoHibernate">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <!--AuthorityManager-START-->
+    <bean id="authorityManager" class="org.appfuse.service.impl.GenericManagerImpl">
+        <constructor-arg>
+            <bean class="org.appfuse.dao.hibernate.GenericDaoHibernate">
+                <constructor-arg value="com.pobox.paging.model.Authority"/>
+                <property name="sessionFactory" ref="sessionFactory"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+    <!--AuthorityManager-END-->
+
+    <!-- Add new Managers here -->
+        <bean id="pagingLookupManager"
+        class="com.pobox.paging.dataaccess.PagingLookupManagerImpl">
+        <property name="pagingDao" ref="pagingLookupDao" />
+    </bean>
+
+    <!--  New Misc beans -->
+    <bean id="paginatedListFactory"
+        class="com.pobox.paging.webapp.helper.PaginateListFactory" />
+</beans>
