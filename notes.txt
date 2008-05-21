@@ -51,3 +51,5 @@ annotate model instructions at http://www.compass-project.org/docs/2.0.0/referen
 log4j : add org.compass at info        
         
 HOWTO: http://forum.compass-project.org/thread.jspa?threadID=72388&tstart=-1
+
+Displaytag bug: http://jira.codehaus.org/browse/DISPL-303

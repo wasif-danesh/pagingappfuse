@@ -83,12 +83,12 @@
 	<!--Authority-END-->
 
 	<!-- ====  COMPASS SEARCH CONTROLLER ==== -->
-    <bean id="searchController" class="org.compass.spring.web.mvc.CompassSearchController">
+    <bean id="searchController" class="com.pobox.paging.webapp.controller.SearchController">
         <property name="compass"><ref bean="compass"/></property>
         <property name="searchView"><value>search</value></property>
         <property name="searchResultsView"><value>search</value></property>
         <property name="pageSize"><value>25</value></property>
-    </bean>
+    </bean> 
 
     <bean id="indexController" class="org.compass.spring.web.mvc.CompassIndexController">
         <property name="compassGps"><ref bean="compassGps"/></property>
