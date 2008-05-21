@@ -8,9 +8,7 @@
     <menu:displayMenu name="UserMenu"/>
     <menu:displayMenu name="AdminMenu"/>
     <menu:displayMenu name="Logout"/>
-    <!--Authority-START-->
     <menu:displayMenu name="AuthorityMenu"/>
-    <!--Authority-END-->
     <menu:displayMenu name="SearchMenu"/> 
 </ul>
 </menu:useMenuDisplayer>

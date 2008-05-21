@@ -33,7 +33,7 @@
 	<bean id="paginatedListFactory"
 		class="com.pobox.paging.webapp.helper.PaginateListFactory" />
 
-
+   <!-- COMPASS START -->
 	<bean id="compass" class="org.compass.spring.LocalCompassBean">
 		<property name="classMappings">
 			<list>
@@ -44,7 +44,11 @@
 			<props>
 				<prop key="compass.engine.connection">file://${user.home}/compass/</prop>
 				<prop key="compass.transaction.factory">org.compass.spring.transaction.SpringSyncTransactionFactory</prop>
-			</props>
+				  <!-- snowball analyzer provides stemming (so 'monkey' gets 'monkeys', too) --> 
+                <prop key="compass.engine.analyzer.default.type">snowball</prop> 
+                <prop key="compass.engine.analyzer.default.name">English</prop> 
+                <prop key="compass.property.all.enabled">true</prop>
+	        </props>
 		</property>
 		<property name="transactionManager" ref="transactionManager" />
 	</bean>
