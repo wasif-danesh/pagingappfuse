@@ -83,26 +83,17 @@
 	<!--Authority-END-->
 
 	<!-- ====  COMPASS SEARCH CONTROLLER ==== -->
-	<bean id="andDefaultCompassSearchHelper"
-		class="com.firstworldtoys.util.AndDefaultCompassSearchHelper">
-		<constructor-arg index="0">
-			<ref bean="compass" />
-		</constructor-arg>
-		<constructor-arg index="1">
-			<value>10</value>
-		</constructor-arg>
-	</bean>
     <bean id="searchController" class="org.compass.spring.web.mvc.CompassSearchController">
         <property name="compass"><ref bean="compass"/></property>
-        <property name="searchView"><value>searchView</value></property>
-        <property name="searchResultsView"><value>searchResultsView</value></property>
-        <property name="pageSize"><value>10</value></property>
+        <property name="searchView"><value>search</value></property>
+        <property name="searchResultsView"><value>search</value></property>
+        <property name="pageSize"><value>25</value></property>
     </bean>
 
     <bean id="indexController" class="org.compass.spring.web.mvc.CompassIndexController">
         <property name="compassGps"><ref bean="compassGps"/></property>
-        <property name="indexView"><value>reindexView</value></property>
-        <property name="indexResultsView"><value>reindexResultsView</value></property>
+        <property name="indexView"><value>reindex</value></property>
+        <property name="indexResultsView"><value>reindex</value></property>
     </bean>
 
 	<!--  RESOLVER -->
@@ -140,18 +131,14 @@
 		<property name="order" value="1" />
 	</bean>
 	
-	   <!-- RB View Resolver for JSPs -->
+	<!-- RB View Resolver for JSPs 
     <bean id="rbViewResolver"
         class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
-        <property name="basename">
-            <value>views</value>
-        </property>
-        <property name="order">
-            <value>0</value>
-        </property>
+        <property name="basename" value="views"/>
+        <property name="order"  value="1"/>
     </bean>
-
-	<!-- View Resolver for JSPs -->
+-->
+	<!-- Internal Resource View Resolver for JSPs -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="requestContextAttribute" value="rc" />
@@ -159,9 +146,7 @@
 			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
-		<property name="order">
-			<value>1</value>
-		</property>
+		<property name="order" value="99"/> <!-- always resolves -->
 	</bean>
 
 </beans>

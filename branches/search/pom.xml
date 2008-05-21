@@ -397,6 +397,31 @@
 			<artifactId>compass</artifactId>
 			<version>${compass.version}</version>
 		</dependency>
+     <dependency>
+          <groupId>org.apache.lucene</groupId>
+          <artifactId>lucene-core</artifactId> 
+          <version>${lucene.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.lucene</groupId>
+          <artifactId>lucene-analyzers</artifactId> 
+          <version>${lucene.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.lucene</groupId>
+          <artifactId>lucene-highlighter</artifactId> 
+          <version>${lucene.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.lucene</groupId>
+          <artifactId>lucene-queries</artifactId> 
+          <version>${lucene.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.lucene</groupId>
+          <artifactId>lucene-snowball</artifactId> 
+          <version>${lucene.version}</version>
+      </dependency>
 
 		<dependency>
 			<groupId>org.appfuse</groupId>
@@ -840,5 +865,6 @@
 		<jdbc.password>paging</jdbc.password>
 		<!-- Compass Settings -->
 		<compass.version>2.0.0</compass.version>
+		<lucene.version>2.3.2</lucene.version>
 	</properties>
 </project>

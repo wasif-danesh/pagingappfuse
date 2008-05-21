@@ -20,83 +20,81 @@ import org.compass.annotations.*;
 
 @SuppressWarnings("unchecked")
 @Entity
-@Searchable(alias="authority") 
-@SearchableConstant(name = "type", values = {"authority"})
+@Searchable(alias = "authority")
+@SearchableAllMetaData(enable = EnableAll.TRUE)
+@SearchableConstant(name = "type", values = { "authority" })
 public class Authority extends BaseObject implements Comparable<Authority> {
-    private static final long serialVersionUID = -5633829061950556162L;
-    private Long id;
-    private String authorityName;
-    private Date version;
+	private static final long serialVersionUID = -5633829061950556162L;
+	private Long id;
+	private String authorityName;
+	private Date version;
 
-    public String getAuthorityName() {
-        return authorityName;
-    }
+	@SearchableProperty(name = "name")
+	@SearchableMetaData(name = "authorityName")
+	public String getAuthorityName() {
+		return authorityName;
+	}
 
-    @SearchableProperty(name="name") 
-    @SearchableMetaData(name = "authorityName")
-    public void setAuthorityName(String authorityName) {
-        this.authorityName = authorityName;
-    }
+	public void setAuthorityName(String authorityName) {
+		this.authorityName = authorityName;
+	}
 
-    @Version
-    @SearchableProperty(name = "version") 
-    @SearchableMetaData(name = "version", format = "dd-MM-yyyy")
-    public Date getVersion() {
-        return version;
-    }
+	@Version
+	@SearchableProperty(name = "versionDate")
+	@SearchableMetaData(name = "version", format = "dd-MM-yyyy")
+	public Date getVersion() {
+		return version;
+	}
 
-    public void setVersion(Date version) {
-        this.version = version;
-    }
+	public void setVersion(Date version) {
+		this.version = version;
+	}
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @SearchableId 
-    public Long getId() {
-        return id;
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@SearchableId
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    /**
-     * @see java.lang.Comparable#compareTo(Object)
-     */
-    public int compareTo(Authority myClass) {
-        return new CompareToBuilder().append(this.id, myClass.id).append(
-                this.version, myClass.version).append(this.authorityName,
-                myClass.authorityName).toComparison();
-    }
+	/**
+	 * @see java.lang.Comparable#compareTo(Object)
+	 */
+	public int compareTo(Authority myClass) {
+		return new CompareToBuilder().append(this.id, myClass.id).append(this.version, myClass.version).append(
+				this.authorityName, myClass.authorityName).toComparison();
+	}
 
-    /**
-     * @see java.lang.Object#equals(Object)
-     */
-    public boolean equals(Object object) {
-        if (!(object instanceof Authority)) {
-            return false;
-        }
-        Authority rhs = (Authority) object;
-        return new EqualsBuilder().append(this.id, rhs.id).append(this.version,
-                rhs.version).append(this.authorityName, rhs.authorityName)
-                .isEquals();
-    }
+	/**
+	 * @see java.lang.Object#equals(Object)
+	 */
+	public boolean equals(Object object) {
+		if (!(object instanceof Authority)) {
+			return false;
+		}
+		Authority rhs = (Authority) object;
+		return new EqualsBuilder().append(this.id, rhs.id).append(this.version, rhs.version).append(this.authorityName,
+				rhs.authorityName).isEquals();
+	}
 
-    /**
-     * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder(896218595, -572312663).append(this.id)
-                .append(this.version).append(this.authorityName).toHashCode();
-    }
+	/**
+	 * @see java.lang.Object#hashCode()
+	 */
+	public int hashCode() {
+		return new HashCodeBuilder(896218595, -572312663).append(this.id).append(this.version).append(
+				this.authorityName).toHashCode();
+	}
 
-    /**
-     * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return new ToStringBuilder(this).append("id", this.id).append(
-                "authorityName", this.authorityName).append("version",
-                this.version).toString();
-    }
+	/**
+	 * @see java.lang.Object#toString()
+	 */
+	public String toString() {
+		return new ToStringBuilder(this).append("id", this.id).append("authorityName", this.authorityName).append(
+				"version", this.version).toString();
+	}
 
 }
