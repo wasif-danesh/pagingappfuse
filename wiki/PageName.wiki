@@ -88,7 +88,8 @@ be updated when Hibernate commits data to the RDBMS.  This is also where you dec
 
 8) URLMappings - add search and reindex to the URLMapping - mapping them to their respective controllers:
 see [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/main/webapp/WEB-INF/dispatcher-servlet.xml dispatcher-servlet.xml]
-{{{  /search.html=searchController
+{{{
+  /search.html=searchController
   /reindex.html=indexController}}}
 
 9) add in beans for the new controllers (see [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/main/webapp/WEB-INF/dispatcher-servlet.xml dispatcher-servlet.xml]):
