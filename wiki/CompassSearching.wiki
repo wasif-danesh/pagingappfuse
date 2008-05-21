@@ -15,8 +15,9 @@ This example project  also shows the use of the Compass built in paging, and als
  * Luke http://www.getopt.org/luke/
  * Displaytag  http://displaytag.sourceforge.net/11/
 == Code ==
-This extends the external PagingSorting example, all the source code is available as a SVN branch at:
-https://pagingappfuse.googlecode.com/svn/branches/search/
+This extends the external PagingSorting example, all the source code is available as a SVN branch.
+see instructions here : http://code.google.com/p/pagingappfuse/source/checkout you want to checkout the *branches/search* tree (the trunk has the PagingSorting code only )
+e.g.: https://pagingappfuse.googlecode.com/svn/branches/search/
 or you can browse the source at:
 http://code.google.com/p/pagingappfuse/source/browse in the branches/search subdirectory
 
