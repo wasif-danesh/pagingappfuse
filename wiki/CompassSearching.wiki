@@ -120,10 +120,11 @@ see [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/ma
 it should find all 106 records, (matching on the version date year), showing only the first 25.
 
 13) The search page is a hybrid - raw HTML at the bottom (with paging courtesy of Compass), and Displaytag at the top (sorting is disabled - but you could add this functionality in).  Displaytag is doing external sorting and paging correctly, however the header says "Displaying 1-25" regardless of what page you are on - this is a Displaytag bug I think : 
-   a) http://jira.codehaus.org/browse/DISPL-303
-   b) http://jira.codehaus.org/browse/DISPL-304
-   c) http://jira.codehaus.org/browse/DISPL-469
+  * http://jira.codehaus.org/browse/DISPL-303
+  * http://jira.codehaus.org/browse/DISPL-304
+  * http://jira.codehaus.org/browse/DISPL-469
 
 ==Further Improvement?==
 1) Sorting - sort search results; a `CompassQuery` can be sorted eg: compassQuery.addSort("propertyName",SortPropertyType.STRING, SortDirection.REVERSE);
+
 2) Fix DisplayTag bug "Display 1 to 25" by implementing a PaginatedList instead
