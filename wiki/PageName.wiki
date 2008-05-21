@@ -115,7 +115,7 @@ see [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/ma
 
 11) fire it up with mvn jetty:run-war , log in as admin and select re-index from the main menu - build the index (it's in ${user.home}/compass if you wish to browse it with [http://www.getopt.org/luke/ Luke])
 
-12) try a search for 2008* - it should find all 106 records, showing only the first 25.
+12) try a search for the term`2008*` - it should find all 106 records, showing only the first 25.
 
 13) The search page is a hybrid - raw HTML at the bottom (with paging courtesy of Compass), and Displaytag at the top (sorting is disabled - but you could add this functionality in).  Displaytag is doing external sorting and paging correctly, however the header says "Displaying 1-25" regardless of what page you are on - this is a Displaytag bug I think : 
    a) http://jira.codehaus.org/browse/DISPL-303
