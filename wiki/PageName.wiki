@@ -92,7 +92,8 @@ see [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/ma
   /search.html=searchController
   /reindex.html=indexController}}}
 
-9) add in beans for the new controllers (see [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/main/webapp/WEB-INF/dispatcher-servlet.xml dispatcher-servlet.xml]):
+9) add in beans for the new controllers (see [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/main/webapp/WEB-INF/dispatcher-servlet.xml dispatcher-servlet.xml] ):
+
 {{{
     <!-- ====  COMPASS SEARCH CONTROLLER ==== -->
     <bean id="searchController" class="com.pobox.paging.webapp.controller.SearchController">
