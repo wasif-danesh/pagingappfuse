@@ -9,11 +9,11 @@ Compass 2.0 has a lot of nice features, including annotations, default AND of qu
 
 This example project  also shows the use of the Compass built in paging, and also 'external' paging via Displaytag.
 == Projects ==
-* Appfuse http://appfuse.org/display/APF/Home
-* Compass http://www.compass-project.org/
-* Lucene http://lucene.apache.org/java/docs/index.html
-* Luke http://www.getopt.org/luke/
-* Displaytag  http://displaytag.sourceforge.net/11/
+ * Appfuse http://appfuse.org/display/APF/Home 
+ * Compass http://www.compass-project.org/
+ * Lucene http://lucene.apache.org/java/docs/index.html
+ * Luke http://www.getopt.org/luke/
+ * Displaytag  http://displaytag.sourceforge.net/11/
 == Code ==
 This extends the external paging example, all the source code is available as a SVN branch at:
 https://pagingappfuse.googlecode.com/svn/branches/search/
