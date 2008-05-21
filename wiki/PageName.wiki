@@ -80,10 +80,10 @@ available to you are documented here http://www.compass-project.org/docs/2.0.0/r
 5) Add a [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/main/webapp/WEB-INF/pages/reindex.jsp reindex.jsp] and a [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/main/webapp/WEB-INF/pages/search.jsp search.jsp]
 
 6) Add a new controller [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/main/java/com/pobox/paging/webapp/controller/SearchController.java CompassSearchController.java] - this is almost the same as that supplied with Compass, however in
-the handle method there are a couple of extra lines that decode DisplayTag's page request and set it into the Command, if you are not using
-DisplayTag then just reuse the CompassSearchController that comes with Compass itself.
+the handle method there are a couple of extra lines that decode `DisplayTag`'s page request and set it into the Command, if you are not using
+`DisplayTag` then just reuse the `CompassSearchController` that comes with Compass itself.
 
-7) Add the compass beans to [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/main/webapp/WEB-INF/applicationContext.xml applicationContext.xml] - these wire up Compass to Hibernate using the new Compass HibernateGpsDevice so that the index will 
+7) Add the compass beans to [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/main/webapp/WEB-INF/applicationContext.xml applicationContext.xml] - these wire up Compass to Hibernate using the new Compass `HibernateGpsDevice` so that the index will 
 be updated when Hibernate commits data to the RDBMS.  This is also where you declare your annotated class to compass.  Note that a number of non-default properties are set on the Compass bean - for instance the use of the Snowball analyzer (for English).
 
 8) URLMappings - add search and reindex to the URLMapping - mapping them to their respective controllers:
@@ -114,11 +114,11 @@ see [http://code.google.com/p/pagingappfuse/source/browse/branches/search/src/ma
 
 12) try a search for 2008* - it should find all 106 records, showing only the first 25.
 
-13) The search page is a hybrid - raw HTML at the bottom (with paging courtesy of Compass), and Displaytag at the top (sorting is disabled - but you could add this functionality in).  Displaytag is doing external sorting and paging correctly, however the header says "Displaying 1-25" regardless of what page you are on - this is a DisplayTag bug I think : 
+13) The search page is a hybrid - raw HTML at the bottom (with paging courtesy of Compass), and Displaytag at the top (sorting is disabled - but you could add this functionality in).  Displaytag is doing external sorting and paging correctly, however the header says "Displaying 1-25" regardless of what page you are on - this is a Displaytag bug I think : 
    a) http://jira.codehaus.org/browse/DISPL-303
    b) http://jira.codehaus.org/browse/DISPL-304
    c) http://jira.codehaus.org/browse/DISPL-469
 
 ==Further Improvement?==
-1) Sorting - sort search results; a CompassQuery can be sorted eg: compassQuery.addSort("propertyName",SortPropertyType.STRING, SortDirection.REVERSE);
+1) Sorting - sort search results; a `CompassQuery` can be sorted eg: compassQuery.addSort("propertyName",SortPropertyType.STRING, SortDirection.REVERSE);
 2) Fix DisplayTag bug "Display 1 to 25" by implementing a PaginatedList instead
