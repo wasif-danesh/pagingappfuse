@@ -1,0 +1,43 @@
+#labels featured
+=More Complex Searching with Compass=
+
+== Code Location ==
+This project is on a branch called weblogs see: http://code.google.com/p/pagingappfuse/source/browse/branches/weblogs/
+
+See http://code.google.com/p/pagingappfuse/source/checkout for how to check it out
+
+=== Overview ===
+Using Appfuse ( http://www.appfuse.org ) and Compass ( http://www.compass-project.org/ ) to build a persistent model that is searchable.
+Here is  a slightly more complex example of using Compass with Hibernate; with relationships between 3
+entities and enabled searchable references across them.
+
+This is a POJO model roughly based on Matt Raibles page at:
+http://raibledesigns.com/wiki/Wiki.jsp?page=HibernateRelationships
+
+I have just updated it with Annotations etc. (which I can never remember so I 
+used http://tadtech.blogspot.com/2007_09_01_archive.html as a quick reference guide)
+
+== Running Steps ==
+  # run it with 
+  ## 	mvn jetty:run-war -Dmaven.test.skip=true
+  ## 	(it is currently assuming an Apache Derby database on localhost)
+  # login (admin/admin)
+  # navigate to Admin menu then re-Index
+  # click re-index as index needs to be revbuilt
+  # On menu click weblogs
+  # search for sp*
+  # Hopefully you can see, (screenshot attached), examples on the results screen of:
+  ## Clickable HREF links to the Authority Detail page for any ID's associated with an Authority 
+search result - this will go off to the database and retrieve the Authority you want by its ID
+  ## Second column of search results is a toString() on the search result object - you can see
+that the search engine has returned a complete object, ready for use no need to go off to the 
+database to retrieve it.
+
+== Code Pointers ==
+Have a look at the model POJO for Category, Weblog, Entry and see the Many-To-One Hibernate
+mappings and the way Compass annotations enable you to do @SearchableRef - this enables you
+to navigate to component objects of your search result object if you wish.
+
+== Screenshot ==
+
+http://code.google.com/p/pagingappfuse/source/browse/branches/weblogs/src/test/resources/AppfuseWeblogSearchResults.png
