@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pobox.paging</groupId>
@@ -17,28 +15,17 @@
 
 	<licenses>
 		<license>
-			<name></name>
-			<url></url>
 		</license>
 	</licenses>
 
 	<scm>
-		<connection></connection>
-		<developerConnection></developerConnection>
-		<url></url>
 	</scm>
 
 	<issueManagement>
-		<system></system>
-		<url></url>
 	</issueManagement>
 
 	<developers>
 		<developer>
-			<id></id>
-			<name></name>
-			<email></email>
-			<timezone></timezone>
 		</developer>
 	</developers>
 
@@ -112,14 +99,10 @@
 				<version>2.5.1</version>
 				<configuration>
 					<additionalProjectnatures>
-						<projectnature>
-							org.springframework.ide.eclipse.core.springnature
-						</projectnature>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
 					</additionalProjectnatures>
 					<additionalBuildcommands>
-						<buildcommand>
-							org.springframework.ide.eclipse.core.springbuilder
-						</buildcommand>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
 					</additionalBuildcommands>
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
@@ -132,9 +115,7 @@
 				<configuration>
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
-					<dependenciesAsLibraries>
-						true
-					</dependenciesAsLibraries>
+					<dependenciesAsLibraries>true</dependenciesAsLibraries>
 					<useFullNames>false</useFullNames>
 				</configuration>
 			</plugin>
@@ -146,9 +127,7 @@
 					<components>
 						<component>
 							<name>hbm2ddl</name>
-							<implementation>
-								annotationconfiguration
-							</implementation>
+							<implementation>annotationconfiguration</implementation>
 							<!-- Use 'jpaconfiguration' if you're using JPA. -->
 							<!--<implementation>jpaconfiguration</implementation>-->
 						</component>
@@ -156,9 +135,7 @@
 					<componentProperties>
 						<drop>true</drop>
 						<jdk5>true</jdk5>
-						<propertyfile>
-							target/classes/jdbc.properties
-						</propertyfile>
+						<propertyfile>target/classes/jdbc.properties</propertyfile>
 						<skip>${maven.test.skip}</skip>
 					</componentProperties>
 				</configuration>
@@ -183,9 +160,7 @@
 				<artifactId>dbunit-maven-plugin</artifactId>
 				<version>1.0-beta-1</version>
 				<configuration>
-					<dataTypeFactoryName>
-						${dbunit.dataTypeFactoryName}
-					</dataTypeFactoryName>
+					<dataTypeFactoryName>${dbunit.dataTypeFactoryName}</dataTypeFactoryName>
 					<driver>${jdbc.driverClassName}</driver>
 					<username>${jdbc.username}</username>
 					<password>${jdbc.password}</password>
@@ -229,9 +204,7 @@
 					<scanIntervalSeconds>3</scanIntervalSeconds>
 					<scanTargetPatterns>
 						<scanTargetPattern>
-							<directory>
-								src/main/webapp/WEB-INF
-							</directory>
+							<directory>src/main/webapp/WEB-INF</directory>
 							<excludes>
 								<exclude>**/*.jsp</exclude>
 							</excludes>
@@ -247,9 +220,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.0.2</version>
 				<configuration>
-					<dependentWarExcludes>
-						**/jdbc.properties,**/hibernate.cfg.xml,**/sql-map-config.xml,**/web.xml,WEB-INF/classes/META-INF/**
-					</dependentWarExcludes>
+					<dependentWarExcludes>**/jdbc.properties,**/hibernate.cfg.xml,**/sql-map-config.xml,**/web.xml,WEB-INF/classes/META-INF/**</dependentWarExcludes>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -265,11 +236,9 @@
 					</execution>
 				</executions>
 				<configuration>
-					<warpathExcludes>
-						applicationContext-resources.xml,ApplicationResources*.properties,ehcache.xml,
+					<warpathExcludes>applicationContext-resources.xml,ApplicationResources*.properties,ehcache.xml,
 						hibernate.cfg.xml,jdbc.properties,log4j.xml,mail.properties,**/persistence.xml,
-						sql-map-config.xml
-					</warpathExcludes>
+						sql-map-config.xml</warpathExcludes>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -288,12 +257,10 @@
 						</goals>
 						<configuration>
 							<encoding>UTF8</encoding>
-							<includes>
-								ApplicationResources_ko.properties,
+							<includes>ApplicationResources_ko.properties,
 								ApplicationResources_no.properties,
 								ApplicationResources_tr.properties,
-								ApplicationResources_zh*.properties
-							</includes>
+								ApplicationResources_zh*.properties</includes>
 						</configuration>
 					</execution>
 					<execution>
@@ -303,12 +270,10 @@
 						</goals>
 						<configuration>
 							<encoding>8859_1</encoding>
-							<includes>
-								ApplicationResources_de.properties,
+							<includes>ApplicationResources_de.properties,
 								ApplicationResources_fr.properties,
 								ApplicationResources_nl.properties,
-								ApplicationResources_pt*.properties
-							</includes>
+								ApplicationResources_pt*.properties</includes>
 						</configuration>
 					</execution>
 				</executions>
@@ -318,30 +283,14 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<excludes>
-					<exclude>
-						ApplicationResources_de.properties
-					</exclude>
-					<exclude>
-						ApplicationResources_fr.properties
-					</exclude>
-					<exclude>
-						ApplicationResources_ko.properties
-					</exclude>
-					<exclude>
-						ApplicationResources_nl.properties
-					</exclude>
-					<exclude>
-						ApplicationResources_no.properties
-					</exclude>
-					<exclude>
-						ApplicationResources_pt*.properties
-					</exclude>
-					<exclude>
-						ApplicationResources_tr.properties
-					</exclude>
-					<exclude>
-						ApplicationResources_zh*.properties
-					</exclude>
+					<exclude>ApplicationResources_de.properties</exclude>
+					<exclude>ApplicationResources_fr.properties</exclude>
+					<exclude>ApplicationResources_ko.properties</exclude>
+					<exclude>ApplicationResources_nl.properties</exclude>
+					<exclude>ApplicationResources_no.properties</exclude>
+					<exclude>ApplicationResources_pt*.properties</exclude>
+					<exclude>ApplicationResources_tr.properties</exclude>
+					<exclude>ApplicationResources_zh*.properties</exclude>
 					<exclude>applicationContext-resources.xml</exclude>
 				</excludes>
 				<filtering>true</filtering>
@@ -351,7 +300,6 @@
 				<includes>
 					<include>applicationContext-resources.xml</include>
 				</includes>
-				<filtering>false</filtering>
 			</resource>
 		</resources>
 		<testResources>
@@ -422,7 +370,11 @@
           <artifactId>lucene-snowball</artifactId> 
           <version>${lucene.version}</version>
       </dependency>
-
+      <dependency>
+           <groupId>displaytag</groupId>
+           <artifactId>displaytag</artifactId>
+           <version>1.1.1</version>
+       </dependency>
 		<dependency>
 			<groupId>org.appfuse</groupId>
 			<artifactId>appfuse-${web.framework}</artifactId>
@@ -548,28 +500,18 @@
 						<configuration>
 							<wait>${cargo.wait}</wait>
 							<container>
-								<containerId>
-									${cargo.container}
-								</containerId>
+								<containerId>${cargo.container}</containerId>
 								<!--home>${cargo.container.home}</home-->
 								<zipUrlInstaller>
 									<url>${cargo.container.url}</url>
-									<installDir>
-										${installDir}
-									</installDir>
+									<installDir>${installDir}</installDir>
 								</zipUrlInstaller>
 							</container>
 							<configuration>
-								<home>
-									${project.build.directory}/${cargo.container}/container
-								</home>
+								<home>${project.build.directory}/${cargo.container}/container</home>
 								<properties>
-									<cargo.hostname>
-										${cargo.host}
-									</cargo.hostname>
-									<cargo.servlet.port>
-										${cargo.port}
-									</cargo.servlet.port>
+									<cargo.hostname>${cargo.host}</cargo.hostname>
+									<cargo.servlet.port>${cargo.port}</cargo.servlet.port>
 								</properties>
 							</configuration>
 						</configuration>
@@ -595,32 +537,21 @@
 						<version>1.1</version>
 						<configuration>
 							<tasks>
-								<taskdef
-									resource="webtest_base_relaxed.taskdef">
-									<classpath
-										refid="maven.test.classpath" />
+								<taskdef resource="webtest_base_relaxed.taskdef">
+									<classpath refid="maven.test.classpath" />
 								</taskdef>
 								<mkdir dir="target/webtest-data" />
 								<!-- Delete old results file if it exists -->
-								<delete
-									file="target/webtest-data/web-tests-result.xml" />
+								<delete file="target/webtest-data/web-tests-result.xml" />
 								<!-- This is so the default will be used if no test case is specified -->
-								<property name="test"
-									value="run-all-tests" />
-								<echo level="info">
-									Testing '${project.build.finalName}'
-									with locale '${user.language}'
-								</echo>
-								<ant
-									antfile="src/test/resources/web-tests.xml" target="${test}">
-									<property name="user.language"
-										value="${user.language}" />
-									<property name="webapp.name"
-										value="${project.build.finalName}" />
-									<property name="host"
-										value="${cargo.host}" />
-									<property name="port"
-										value="${cargo.port}" />
+								<property name="test" value="run-all-tests" />
+								<echo level="info">Testing '${project.build.finalName}'
+									with locale '${user.language}'</echo>
+								<ant antfile="src/test/resources/web-tests.xml" target="${test}">
+									<property name="user.language" value="${user.language}" />
+									<property name="webapp.name" value="${project.build.finalName}" />
+									<property name="host" value="${cargo.host}" />
+									<property name="port" value="${cargo.port}" />
 								</ant>
 							</tasks>
 						</configuration>
@@ -642,9 +573,7 @@
 								<exclusions>
 									<exclusion>
 										<groupId>groovy</groupId>
-										<artifactId>
-											groovy-all
-										</artifactId>
+										<artifactId>groovy-all</artifactId>
 									</exclusion>
 								</exclusions>
 							</dependency>
@@ -666,9 +595,7 @@
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>dbunit-maven-plugin</artifactId>
 						<configuration>
-							<src>
-								src/main/resources/default-data.xml
-							</src>
+							<src>src/main/resources/default-data.xml</src>
 						</configuration>
 					</plugin>
 				</plugins>
@@ -679,16 +606,12 @@
 		<profile>
 			<id>derby</id>
 			<properties>
-				<hibernate.dialect>
-					org.hibernate.dialect.DerbyDialect
-				</hibernate.dialect>
+				<hibernate.dialect>org.hibernate.dialect.DerbyDialect</hibernate.dialect>
 				<jdbc.groupId>org.apache.derby</jdbc.groupId>
 				<jdbc.artifactId>derbyclient</jdbc.artifactId>
 				<jdbc.version>10.2.2.0</jdbc.version>
-				<jdbc.driverClassName>
-					org.apache.derby.jdbc.ClientDriver
-				</jdbc.driverClassName>
-				<jdbc.url><![CDATA[jdbc:derby://localhost/pagingappfuse;create=true]]></jdbc.url>
+				<jdbc.driverClassName>org.apache.derby.jdbc.ClientDriver</jdbc.driverClassName>
+				<jdbc.url>jdbc:derby://localhost/pagingappfuse;create=true</jdbc.url>
 				<jdbc.username>any</jdbc.username>
 				<jdbc.password>value</jdbc.password>
 			</properties>
@@ -696,60 +619,40 @@
 		<profile>
 			<id>h2</id>
 			<properties>
-				<dbunit.dataTypeFactoryName>
-					org.dbunit.ext.hsqldb.HsqldbDataTypeFactory
-				</dbunit.dataTypeFactoryName>
-				<hibernate.dialect>
-					org.hibernate.dialect.H2Dialect
-				</hibernate.dialect>
+				<dbunit.dataTypeFactoryName>org.dbunit.ext.hsqldb.HsqldbDataTypeFactory</dbunit.dataTypeFactoryName>
+				<hibernate.dialect>org.hibernate.dialect.H2Dialect</hibernate.dialect>
 				<jdbc.groupId>com.h2database</jdbc.groupId>
 				<jdbc.artifactId>h2</jdbc.artifactId>
 				<jdbc.version>1.0.20061217</jdbc.version>
-				<jdbc.driverClassName>
-					org.h2.Driver
-				</jdbc.driverClassName>
-				<jdbc.url><![CDATA[jdbc:h2:${java.io.tmpdir}/pagingappfuse]]></jdbc.url>
+				<jdbc.driverClassName>org.h2.Driver</jdbc.driverClassName>
+				<jdbc.url>jdbc:h2:${java.io.tmpdir}/pagingappfuse</jdbc.url>
 				<jdbc.username>sa</jdbc.username>
-				<jdbc.password></jdbc.password>
 			</properties>
 		</profile>
 		<profile>
 			<id>hsqldb</id>
 			<properties>
-				<dbunit.dataTypeFactoryName>
-					org.dbunit.ext.hsqldb.HsqldbDataTypeFactory
-				</dbunit.dataTypeFactoryName>
-				<hibernate.dialect>
-					org.hibernate.dialect.HSQLDialect
-				</hibernate.dialect>
+				<dbunit.dataTypeFactoryName>org.dbunit.ext.hsqldb.HsqldbDataTypeFactory</dbunit.dataTypeFactoryName>
+				<hibernate.dialect>org.hibernate.dialect.HSQLDialect</hibernate.dialect>
 				<jdbc.groupId>hsqldb</jdbc.groupId>
 				<jdbc.artifactId>hsqldb</jdbc.artifactId>
 				<jdbc.version>1.8.0.7</jdbc.version>
-				<jdbc.driverClassName>
-					org.hsqldb.jdbcDriver
-				</jdbc.driverClassName>
-				<jdbc.url><![CDATA[jdbc:hsqldb:${java.io.tmpdir}/pagingappfuse;shutdown=true]]></jdbc.url>
+				<jdbc.driverClassName>org.hsqldb.jdbcDriver</jdbc.driverClassName>
+				<jdbc.url>jdbc:hsqldb:${java.io.tmpdir}/pagingappfuse;shutdown=true</jdbc.url>
 				<jdbc.username>sa</jdbc.username>
-				<jdbc.password></jdbc.password>
 			</properties>
 		</profile>
 		<profile>
 			<id>oracle</id>
 			<properties>
-				<dbunit.dataTypeFactoryName>
-					org.dbunit.ext.oracle.OracleDataTypeFactory
-				</dbunit.dataTypeFactoryName>
+				<dbunit.dataTypeFactoryName>org.dbunit.ext.oracle.OracleDataTypeFactory</dbunit.dataTypeFactoryName>
 				<dbunit.schema>SYSTEM</dbunit.schema><!-- Make sure to capitalize the schema name -->
-				<hibernate.dialect>
-					org.hibernate.dialect.Oracle9Dialect
-				</hibernate.dialect>
+				<hibernate.dialect>org.hibernate.dialect.Oracle9Dialect</hibernate.dialect>
 				<jdbc.groupId>com.oracle</jdbc.groupId>
 				<jdbc.artifactId>ojdbc14</jdbc.artifactId>
 				<jdbc.version>10.2.0.2.0</jdbc.version>
-				<jdbc.driverClassName>
-					oracle.jdbc.OracleDriver
-				</jdbc.driverClassName>
-				<jdbc.url><![CDATA[jdbc:oracle:thin:@localhost:1521:XE]]></jdbc.url>
+				<jdbc.driverClassName>oracle.jdbc.OracleDriver</jdbc.driverClassName>
+				<jdbc.url>jdbc:oracle:thin:@localhost:1521:XE</jdbc.url>
 				<jdbc.username>system</jdbc.username>
 				<jdbc.password>system</jdbc.password>
 			</properties>
@@ -757,16 +660,12 @@
 		<profile>
 			<id>postgresql</id>
 			<properties>
-				<hibernate.dialect>
-					org.hibernate.dialect.PostgreSQLDialect
-				</hibernate.dialect>
+				<hibernate.dialect>org.hibernate.dialect.PostgreSQLDialect</hibernate.dialect>
 				<jdbc.groupId>postgresql</jdbc.groupId>
 				<jdbc.artifactId>postgresql</jdbc.artifactId>
 				<jdbc.version>8.1-407.jdbc3</jdbc.version>
-				<jdbc.driverClassName>
-					org.postgresql.Driver
-				</jdbc.driverClassName>
-				<jdbc.url><![CDATA[jdbc:postgresql://localhost/pagingappfuse]]></jdbc.url>
+				<jdbc.driverClassName>org.postgresql.Driver</jdbc.driverClassName>
+				<jdbc.url>jdbc:postgresql://localhost/pagingappfuse</jdbc.url>
 				<jdbc.username>postgres</jdbc.username>
 				<jdbc.password>postgres</jdbc.password>
 			</properties>
@@ -776,22 +675,14 @@
 			<!-- http://www.mattwoodward.com/blog/index.cfm?commentID=211 -->
 			<id>sqlserver</id>
 			<properties>
-				<dbunit.dataTypeFactoryName>
-					org.dbunit.ext.mssql.MsSqlDataTypeFactory
-				</dbunit.dataTypeFactoryName>
-				<dbunit.operation.type>
-					MSSQL_CLEAN_INSERT
-				</dbunit.operation.type>
-				<hibernate.dialect>
-					org.hibernate.dialect.SQLServerDialect
-				</hibernate.dialect>
+				<dbunit.dataTypeFactoryName>org.dbunit.ext.mssql.MsSqlDataTypeFactory</dbunit.dataTypeFactoryName>
+				<dbunit.operation.type>MSSQL_CLEAN_INSERT</dbunit.operation.type>
+				<hibernate.dialect>org.hibernate.dialect.SQLServerDialect</hibernate.dialect>
 				<jdbc.groupId>net.sourceforge.jtds</jdbc.groupId>
 				<jdbc.artifactId>jtds</jdbc.artifactId>
 				<jdbc.version>1.2</jdbc.version>
-				<jdbc.driverClassName>
-					net.sourceforge.jtds.jdbc.Driver
-				</jdbc.driverClassName>
-				<jdbc.url><![CDATA[jdbc:jtds:sqlserver://localhost:3683/pagingappfuse]]></jdbc.url>
+				<jdbc.driverClassName>net.sourceforge.jtds.jdbc.Driver</jdbc.driverClassName>
+				<jdbc.url>jdbc:jtds:sqlserver://localhost:3683/pagingappfuse</jdbc.url>
 				<jdbc.username>sa</jdbc.username>
 				<jdbc.password>appfuse</jdbc.password>
 			</properties>
@@ -802,12 +693,8 @@
 			<id>jboss</id>
 			<properties>
 				<cargo.container>jboss4x</cargo.container>
-				<cargo.container.home>
-					${env.JBOSS_HOME}
-				</cargo.container.home>
-				<cargo.container.url>
-					http://easynews.dl.sourceforge.net/sourceforge/jboss/jboss-4.0.5.GA.zip
-				</cargo.container.url>
+				<cargo.container.home>${env.JBOSS_HOME}</cargo.container.home>
+				<cargo.container.url>http://easynews.dl.sourceforge.net/sourceforge/jboss/jboss-4.0.5.GA.zip</cargo.container.url>
 			</properties>
 		</profile>
 	</profiles>
@@ -815,6 +702,7 @@
 	<properties>
 		<!-- Application settings -->
 		<copyright.year>2008</copyright.year>
+		<netbeans.hint.deploy.server>Tomcat60</netbeans.hint.deploy.server>
 		<dao.framework>hibernate</dao.framework>
 		<web.framework>spring</web.framework>
 		<amp.genericCore>true</amp.genericCore>
@@ -836,31 +724,21 @@
 
 		<!-- Cargo settings -->
 		<cargo.container>tomcat5x</cargo.container>
-		<cargo.container.home>
-			${env.CATALINA_HOME}
-		</cargo.container.home>
-		<cargo.container.url>
-			http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.14/bin/apache-tomcat-6.0.14.zip
-		</cargo.container.url>
+		<cargo.container.home>${env.CATALINA_HOME}</cargo.container.home>
+		<cargo.container.url>http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.14/bin/apache-tomcat-6.0.14.zip</cargo.container.url>
 		<cargo.host>localhost</cargo.host>
 		<cargo.port>8081</cargo.port>
 		<cargo.wait>false</cargo.wait>
 
 		<!-- Database settings -->
-		<dbunit.dataTypeFactoryName>
-			org.dbunit.dataset.datatype.DefaultDataTypeFactory
-		</dbunit.dataTypeFactoryName>
+		<dbunit.dataTypeFactoryName>org.dbunit.dataset.datatype.DefaultDataTypeFactory</dbunit.dataTypeFactoryName>
 		<dbunit.operation.type>CLEAN_INSERT</dbunit.operation.type>
-		<hibernate.dialect>
-			org.hibernate.dialect.DerbyDialect
-		</hibernate.dialect>
+		<hibernate.dialect>org.hibernate.dialect.DerbyDialect</hibernate.dialect>
 		<jdbc.groupId>org.apache.derby</jdbc.groupId>
 		<jdbc.artifactId>derbyclient</jdbc.artifactId>
 		<jdbc.version>10.4.1.3</jdbc.version>
-		<jdbc.driverClassName>
-			org.apache.derby.jdbc.ClientDriver
-		</jdbc.driverClassName>
-		<jdbc.url><![CDATA[jdbc:derby://localhost/paging;create=true]]></jdbc.url>
+		<jdbc.driverClassName>org.apache.derby.jdbc.ClientDriver</jdbc.driverClassName>
+		<jdbc.url>jdbc:derby://localhost/paging;create=true</jdbc.url>
 		<jdbc.username>paging</jdbc.username>
 		<jdbc.password>paging</jdbc.password>
 		<!-- Compass Settings -->

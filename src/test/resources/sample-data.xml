@@ -631,4 +631,68 @@
 		</row>
 	</table>
 	<!--Authority-END-->
+	  <table name='weblog'>
+    <column>weblog_id</column>
+    <column>blog_title</column>
+    <column>datecreated</column>
+    <row>
+      <value>1</value>
+      <value><![CDATA[Sponge Bob is Cool]]></value>
+      <value>2004-03-31</value>
+    </row>
+    <row>
+      <value>2</value>
+      <value><![CDATA[Java Development = Fun]]></value>
+      <value>2005-01-05</value>
+    </row>
+  </table>
+
+  <table name='category'>
+    <column>category_id</column>
+    <column>name</column>
+    <column>description</column>
+    <row>
+      <value>1</value>
+      <value><![CDATA[Struts vs. Spring MVC]]></value>
+      <value><![CDATA[Comparing implementations of the MVC Design Pattern]]></value>
+    </row>
+    <row>
+      <value>2</value>
+      <value><![CDATA[Cycling Notes]]></value>
+      <value><![CDATA[All about cycling in the US.]]></value>
+    </row>
+    <row>
+      <value>3</value>
+      <value><![CDATA[Cyclocross]]></value>
+      <value><![CDATA[Bog Trotters Unite!]]></value>
+    </row>
+  </table>
+  <table name='entry'>
+    <column>entry_id</column>
+    <column>text</column>
+    <column>timecreated</column>
+    <column>weblog_id</column>
+    <column>category_id</column>
+    <row>
+      <value>1</value>
+      <value><![CDATA[Testing]]></value>
+      <value>2005-04-11 01:02:03.4</value>
+      <value>1</value>
+      <value>1</value>
+    </row>
+    <row>
+      <value>2</value>
+      <value><![CDATA[Test Value]]></value>
+      <value>2005-04-12 01:02:03.4</value>
+      <value>1</value>
+      <value>1</value>
+    </row>
+    <row>
+      <value>3</value>
+      <value><![CDATA[Test Value 3]]></value>
+      <value>2005-04-12 01:02:03.4</value>
+      <value>2</value>
+      <value>3</value>
+    </row>
+  </table>
 </dataset>

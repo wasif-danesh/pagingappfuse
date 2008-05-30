@@ -38,6 +38,9 @@
 		<property name="classMappings">
 			<list>
 				<value>com.pobox.paging.model.Authority</value>
+				<value>com.pobox.paging.model.Weblog</value>
+				<value>com.pobox.paging.model.Entry</value>
+				<value>com.pobox.paging.model.Category</value>
 			</list>
 		</property>
 		<property name="compassSettings">
