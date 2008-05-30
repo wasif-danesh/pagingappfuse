@@ -10,5 +10,6 @@
     <menu:displayMenu name="Logout"/>
     <menu:displayMenu name="AuthorityMenu"/>
     <menu:displayMenu name="SearchMenu"/> 
+    <menu:displayMenu name="SearchWeblogsMenu"/> 
 </ul>
 </menu:useMenuDisplayer>

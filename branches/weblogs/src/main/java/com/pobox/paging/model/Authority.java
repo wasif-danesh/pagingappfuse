@@ -13,10 +13,13 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.appfuse.model.BaseObject;
+import org.compass.annotations.EnableAll;
 import org.compass.annotations.Searchable;
+import org.compass.annotations.SearchableAllMetaData;
+import org.compass.annotations.SearchableConstant;
 import org.compass.annotations.SearchableId;
 import org.compass.annotations.SearchableMetaData;
-import org.compass.annotations.*;
+import org.compass.annotations.SearchableProperty;
 
 @SuppressWarnings("unchecked")
 @Entity
@@ -40,8 +43,8 @@ public class Authority extends BaseObject implements Comparable<Authority> {
 	}
 
 	@Version
-	@SearchableProperty(name = "versionDate")
-	@SearchableMetaData(name = "version", format = "dd-MM-yyyy")
+    @SearchableProperty(name = "versionDate")
+    @SearchableMetaData(name = "version", format = "dd-MM-yyyy")
 	public Date getVersion() {
 		return version;
 	}

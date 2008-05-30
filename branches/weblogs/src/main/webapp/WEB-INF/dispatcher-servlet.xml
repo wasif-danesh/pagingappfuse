@@ -89,6 +89,13 @@
         <property name="searchResultsView"><value>search</value></property>
         <property name="pageSize"><value>25</value></property>
     </bean> 
+    
+       <bean id="searchWeblogsController" class="com.pobox.paging.webapp.controller.SearchWeblogsController">
+        <property name="compass"><ref bean="compass"/></property>
+        <property name="searchView"><value>searchweblogs</value></property>
+        <property name="searchResultsView"><value>searchweblogs</value></property>
+        <property name="pageSize"><value>25</value></property>
+    </bean> 
 
     <bean id="indexController" class="org.compass.spring.web.mvc.CompassIndexController">
         <property name="compassGps"><ref bean="compassGps"/></property>
@@ -120,6 +127,7 @@
 				/passwordHint.html=passwordHintController
 				/authorities.html=authorityController
 				/search.html=searchController
+				/searchweblogs.html=searchWeblogsController
 				/reindex.html=indexController
 			</value>
 		</property>

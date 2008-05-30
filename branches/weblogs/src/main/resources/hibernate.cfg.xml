@@ -2,9 +2,12 @@
     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-    <session-factory>
-        <mapping class="org.appfuse.model.User"/>
-        <mapping class="org.appfuse.model.Role"/>
-        <mapping class="com.pobox.paging.model.Authority"/>
-    </session-factory>
+	<session-factory>
+		<mapping class="org.appfuse.model.User" />
+		<mapping class="org.appfuse.model.Role" />
+		<mapping class="com.pobox.paging.model.Authority" />
+		<mapping class="com.pobox.paging.model.Weblog" />
+		<mapping class="com.pobox.paging.model.Entry" />
+		<mapping class="com.pobox.paging.model.Category" />
+	</session-factory>
 </hibernate-configuration>
