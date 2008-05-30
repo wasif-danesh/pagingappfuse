@@ -1,31 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
-       default-lazy-init="true">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	default-lazy-init="true">
 
-    <!-- Add new DAOs here -->
-    <bean id="pagingLookupDao"
-        class="com.pobox.paging.dataaccess.PagingLookupDaoHibernate">
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
-    <!--AuthorityManager-START-->
-    <bean id="authorityManager" class="org.appfuse.service.impl.GenericManagerImpl">
-        <constructor-arg>
-            <bean class="org.appfuse.dao.hibernate.GenericDaoHibernate">
-                <constructor-arg value="com.pobox.paging.model.Authority"/>
-                <property name="sessionFactory" ref="sessionFactory"/>
-            </bean>
-        </constructor-arg>
-    </bean>
-    <!--AuthorityManager-END-->
+	<!-- Add new DAOs here -->
+	<bean id="pagingLookupDao"
+		class="com.pobox.paging.dataaccess.PagingLookupDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!--AuthorityManager-START-->
+	<bean id="authorityManager"
+		class="org.appfuse.service.impl.GenericManagerImpl">
+		<constructor-arg>
+			<bean
+				class="org.appfuse.dao.hibernate.GenericDaoHibernate">
+				<constructor-arg
+					value="com.pobox.paging.model.Authority" />
+				<property name="sessionFactory" ref="sessionFactory" />
+			</bean>
+		</constructor-arg>
+	</bean>
+	<!--AuthorityManager-END-->
 
-    <!-- Add new Managers here -->
-        <bean id="pagingLookupManager"
-        class="com.pobox.paging.dataaccess.PagingLookupManagerImpl">
-        <property name="pagingDao" ref="pagingLookupDao" />
-    </bean>
+	<!-- Add new Managers here -->
+	<bean id="pagingLookupManager"
+		class="com.pobox.paging.dataaccess.PagingLookupManagerImpl">
+		<property name="pagingDao" ref="pagingLookupDao" />
+	</bean>
 
-    <!--  New Misc beans -->
-    <bean id="paginatedListFactory"
-        class="com.pobox.paging.webapp.helper.PaginateListFactory" />
+	<!--  New Misc beans -->
+	<bean id="paginatedListFactory"
+		class="com.pobox.paging.webapp.helper.PaginateListFactory" />
+
+   <!-- COMPASS START -->
+	<bean id="compass" class="org.compass.spring.LocalCompassBean">
+		<property name="classMappings">
+			<list>
+				<value>com.pobox.paging.model.Authority</value>
+			</list>
+		</property>
+		<property name="compassSettings">
+			<props>
+				<prop key="compass.engine.connection">file://${user.home}/compass/</prop>
+				<prop key="compass.transaction.factory">org.compass.spring.transaction.SpringSyncTransactionFactory</prop>
+				  <!-- snowball analyzer provides stemming (so 'monkey' gets 'monkeys', too) --> 
+                <prop key="compass.engine.analyzer.default.type">snowball</prop> 
+                <prop key="compass.engine.analyzer.default.name">English</prop> 
+                <prop key="compass.property.all.enabled">true</prop>
+	        </props>
+		</property>
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+  <bean id="hibernateGpsDevice" class="org.compass.gps.device.hibernate.HibernateGpsDevice">
+      <property name="name"><value>hibernateDevice</value></property>
+      <property name="sessionFactory" ref="sessionFactory" />
+      <property name="nativeExtractor"><bean class="org.compass.spring.device.hibernate.SpringNativeHibernateExtractor" /></property>
+    </bean>
+     <bean id="compassGps" class="org.compass.gps.impl.SingleCompassGps" init-method="start" destroy-method="stop">
+       <property name="compass"><ref bean="compass" /></property>
+       <property name="gpsDevices">
+         <list>
+             <bean class="org.compass.spring.device.SpringSyncTransactionGpsDeviceWrapper">
+                 <property name="gpsDevice" ref="hibernateGpsDevice" />
+             </bean>
+         </list>
+       </property>
+     </bean>
+	<!-- COMPASS END -->
 </beans>
