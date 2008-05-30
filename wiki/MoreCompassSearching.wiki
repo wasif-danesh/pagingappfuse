@@ -22,13 +22,11 @@ used http://tadtech.blogspot.com/2007_09_01_archive.html as a quick reference gu
   ## 	mvn jetty:run-war -Dmaven.test.skip=true
   ## 	(it is currently assuming an Apache Derby database on localhost)
   # login (admin/admin)
-  # navigate to Admin menu then re-Index
-  # click re-index as index needs to be revbuilt
+  # navigate to Admin menu then re-Index (we must rebuild the index for new searchable properties)
   # On menu click weblogs
-  # search for sp*
+  # search for the query term:  * sp`*` *
   # Hopefully you can see, (screenshot attached), examples on the results screen of:
-  ## Clickable HREF links to the Authority Detail page for any ID's associated with an Authority 
-search result - this will go off to the database and retrieve the Authority you want by its ID
+  ## Clickable HREF links to the Authority Detail page for any ID's associated with an Authority search result - this will go off to the database and retrieve the Authority you want by its ID
   ## Second column of search results is a toString() on the search result object - you can see
 that the search engine has returned a complete object, ready for use no need to go off to the 
 database to retrieve it.
@@ -40,4 +38,4 @@ to navigate to component objects of your search result object if you wish.
 
 == Screenshot ==
 
-http://code.google.com/p/pagingappfuse/source/browse/branches/weblogs/src/test/resources/AppfuseWeblogSearchResults.png
+http://pagingappfuse.googlecode.com/svn/branches/weblogs/src/test/resources/AppfuseWeblogSearchResults.png
