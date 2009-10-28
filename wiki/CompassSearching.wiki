@@ -8,6 +8,10 @@ Compass 2.0 has a lot of nice features, including annotations, default AND of qu
 (used to be OR), and built in result paging.
 
 This example project  also shows the use of the Compass built in paging, and also 'external' paging via Displaytag.
+
+== See Also ==
+More complex searching - multiple models: http://code.google.com/p/pagingappfuse/wiki/MoreCompassSearching
+
 == Projects ==
  * Appfuse http://appfuse.org/display/APF/Home 
  * Compass http://www.compass-project.org/
